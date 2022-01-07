@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseStorage
 
 class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak private var enterTextField: UITextField!
     @IBOutlet weak private var pickedImageView: UIImageView!
     
+    let firestore = FirestoreService.shared
+    let storage = StorageService.shared
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     // basic delegate assignment
@@ -28,8 +33,21 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.allowsEditing = true
         present(picker, animated: true)
     }
+
     @IBAction func saveButtonAction(_ sender: Any) {
-        
+        guard let textPosted = enterTextField.text,
+              let pickedImage = pickedImageView.image
+        else { return }
+        // calling upload image through singleton pattern
+        storage.uploadImage(pickedImage) { (imageUrl) in
+            // updating our data source
+            let dataSource = PostModel(textPosted: textPosted, imageSource: imageUrl)
+            // using save function for firebase firestore
+            self.firestore.save(dataSource) { (result) in
+                print(result)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     // Functions for Picker
@@ -39,9 +57,9 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let image = info[.editedImage] as? UIImage else {
             return
         }
-        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
-            return
-        }
+//        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+//            return
+//        }
         pickedImageView.image = image
     }
     // Close picker when User cancels it

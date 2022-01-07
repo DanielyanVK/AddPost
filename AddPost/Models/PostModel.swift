@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PostModel: Codable {
+struct PostModel: Codable {
     let textPosted: String
     let imageSource: String
 }

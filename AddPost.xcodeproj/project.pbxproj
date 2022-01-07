@@ -99,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				E4C48ED32784626A00CB63E2 /* AddPost */,
-				E4E61CC42785E33A00C92260 /* Services */,
 				E4C48ED22784626A00CB63E2 /* Products */,
 				64E87A07F74540E3BBD889B1 /* Pods */,
 				723712B587539627CEE29CD5 /* Frameworks */,
@@ -121,6 +120,7 @@
 				E4C48EE82784628700CB63E2 /* Delegates */,
 				E405D0EE278471D000AB423A /* Custom Views */,
 				E405D0F32784760F00AB423A /* Models */,
+				E4E61CC42785E33A00C92260 /* Services */,
 				E4C48EDD2784626A00CB63E2 /* Assets.xcassets */,
 				E4C48EDF2784626A00CB63E2 /* LaunchScreen.storyboard */,
 				E4C48EE22784626A00CB63E2 /* Info.plist */,

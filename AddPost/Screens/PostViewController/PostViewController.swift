@@ -13,6 +13,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     private let cellId = "PostCell"
     // Empty variable to transfer data
     var dataSource = [PostModel] ()
+    // Calling Firestore Service Singleton
+    let firestore = FirestoreService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
