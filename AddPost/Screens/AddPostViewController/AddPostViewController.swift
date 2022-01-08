@@ -13,10 +13,12 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak private var enterTextField: UITextField!
     @IBOutlet weak private var pickedImageView: UIImageView!
-    
+    // Delegate reference from other VC
+    var delegate: AddPostDelegate?
+
     let firestore = FirestoreService.shared
     let storage = StorageService.shared
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     // basic delegate assignment
@@ -42,14 +44,15 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         storage.uploadImage(pickedImage) { (imageUrl) in
             // updating our data source
             let dataSource = PostModel(textPosted: textPosted, imageSource: imageUrl)
+            // Using protocol from post view controller to append data from this view controller
+            self.delegate?.addPost(dataSource)
             // using save function for firebase firestore
             self.firestore.save(dataSource) { (result) in
                 print(result)
-                self.navigationController?.popViewController(animated: true)
+               self.navigationController?.popViewController(animated: true)
             }
         }
     }
-    
     // Functions for Picker
     // User finished picking photo.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -57,9 +60,6 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let image = info[.editedImage] as? UIImage else {
             return
         }
-//        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
-//            return
-//        }
         pickedImageView.image = image
     }
     // Close picker when User cancels it
@@ -67,7 +67,6 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
 // Extension to resign keyboard with "return" button
 extension AddPostViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
