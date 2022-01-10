@@ -10,4 +10,5 @@ import Foundation
 struct PostModel: Codable {
     let textPosted: String
     let imageSource: String
+    let timePosted: TimeInterval
 }

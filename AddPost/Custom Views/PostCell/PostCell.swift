@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostCell: UITableViewCell {
-    @IBOutlet weak var CellsImageView: UIImageView!
-    @IBOutlet weak var CellsLabel: UILabel!
+    @IBOutlet weak private var cellsImageView: UIImageView!
+    @IBOutlet weak private var cellsLabel: UILabel!
+    @IBOutlet weak private var cellsTimePostedLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,11 +25,10 @@ class PostCell: UITableViewCell {
     func update (with model: PostModel) {
         // getting url from our model (after it uploads to Firebase Storage)
         let url = URL(string: model.imageSource)
-        // converting url to Data
-        let data = try? Data(contentsOf: url!)
         // Setting label's text from model
-        CellsLabel.text = model.textPosted
-        // converting data in to UI Image to set it in our cell
-        CellsImageView.image = UIImage(data: data!)
+        cellsLabel.text = model.textPosted
+        // Setting image with Kingfisher
+        cellsImageView.kf.setImage(with: url)
+        cellsTimePostedLabel.text = "posted \(model.timePosted) ago"
     }
 }

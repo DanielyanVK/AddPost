@@ -6,6 +6,8 @@
 //
 import Foundation
 import FirebaseFirestore
+import Firebase
+import FirebaseDatabase
 
 class FirestoreService {
     private init() {}
@@ -18,7 +20,8 @@ class FirestoreService {
     // Adding function to save data. Including error handling found in documentation
     func save(_ post: PostModel, completion: @escaping (Result<Bool, NSError>) -> Void) {
         postReference.addDocument(data: ["textPosted" : post.textPosted,
-                                         "imageSource" : post.imageSource])
+                                         "imageSource" : post.imageSource,
+                                         "timePosted" : post.timePosted])
         { (error) in
             if let unwrappedError = error {
                 completion(.failure(unwrappedError as NSError))
@@ -44,8 +47,9 @@ class FirestoreService {
                 // assigning type of value we neeed to keys we got
                 let textPosted = documentData["textPosted"] as? String ?? ""
                 let imageSource = documentData["imageSource"] as? String ?? ""
+                let timePosted = documentData["timePosted"] as? Double ?? 0.0
                 // Declaring how we want to store this data in our model
-                let updatedPost = PostModel(textPosted: textPosted, imageSource: imageSource)
+                let updatedPost = PostModel(textPosted: textPosted, imageSource: imageSource, timePosted: timePosted)
                 // appending values
                 posts.append(updatedPost)
             }
