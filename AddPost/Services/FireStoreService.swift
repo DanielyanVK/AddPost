@@ -39,6 +39,7 @@ class FirestoreService {
                 return
             }
             var posts = [PostModel]()
+            posts.removeAll()
             // getting unwrapped data
             let documents = unwrappedSnapshot.documents
             // unwrapping data as dictionary

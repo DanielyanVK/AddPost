@@ -14,12 +14,12 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak private var enterTextField: UITextField!
     @IBOutlet weak private var pickedImageView: UIImageView!
-
+    
     let firestore = FirestoreService.shared
     let storage = StorageService.shared
     override func viewDidLoad() {
         super.viewDidLoad()
-    // basic delegate assignment
+        // basic delegate assignment
         enterTextField.delegate = self
     }
     
@@ -33,7 +33,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-
+    
     @IBAction func saveButtonAction(_ sender: Any) {
         let timePosted = Date().timeIntervalSince1970
         guard let textPosted = enterTextField.text,

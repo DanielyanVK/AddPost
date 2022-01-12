@@ -30,20 +30,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time posted" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBP-fH-B02">
-                        <rect key="frame" x="0.0" y="112" width="404" height="21"/>
+                        <rect key="frame" x="188" y="112" width="216" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="vBP-fH-B02" firstAttribute="leading" secondItem="7qh-ux-OHi" secondAttribute="trailing" constant="8" symbolic="YES" id="1kK-pR-UPQ"/>
                     <constraint firstAttribute="trailing" secondItem="vBP-fH-B02" secondAttribute="trailing" constant="10" id="4jC-G1-rcN"/>
                     <constraint firstItem="7qh-ux-OHi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="96Y-59-1ip"/>
                     <constraint firstAttribute="bottom" secondItem="7qh-ux-OHi" secondAttribute="bottom" id="9zr-HW-2T9"/>
                     <constraint firstAttribute="trailing" secondItem="8NM-wE-Avi" secondAttribute="trailing" id="HJE-TS-48a"/>
                     <constraint firstItem="8NM-wE-Avi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PGx-eZ-btU"/>
                     <constraint firstItem="8NM-wE-Avi" firstAttribute="leading" secondItem="7qh-ux-OHi" secondAttribute="trailing" constant="18" id="RPN-iY-nNw"/>
-                    <constraint firstItem="vBP-fH-B02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TW1-PJ-zVW"/>
                     <constraint firstItem="vBP-fH-B02" firstAttribute="top" secondItem="8NM-wE-Avi" secondAttribute="bottom" constant="9" id="WFr-ZW-eoq"/>
                     <constraint firstItem="7qh-ux-OHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cQa-VM-BYG"/>
                     <constraint firstAttribute="bottom" secondItem="8NM-wE-Avi" secondAttribute="bottom" constant="30" id="iCC-Bu-YSC"/>

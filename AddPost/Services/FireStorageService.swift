@@ -31,7 +31,6 @@ class StorageService {
                     if let unwrappedDownloaderror = downloadError {
                         print(unwrappedDownloaderror)
                     } else if let imageUrl = url {
-                        // NOTE: Ask Danil about absolute String since I found solution but didn't find theory behind it's use
                         completion (imageUrl.absoluteString)
                     }
                 }

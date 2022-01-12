@@ -15,7 +15,6 @@ class PostCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,10 +24,15 @@ class PostCell: UITableViewCell {
     func update (with model: PostModel) {
         // getting url from our model (after it uploads to Firebase Storage)
         let url = URL(string: model.imageSource)
-        // Setting label's text from model
+        // Converting Timestamp value from model to Date value
+        let unformattedDate = Date(timeIntervalSince1970: model.timePosted)
+        // Using calender extension to return a string "Posted (time) ago"
+        let postTime = unformattedDate.calenderTimeSinceNow()
+        
         cellsLabel.text = model.textPosted
         // Setting image with Kingfisher
         cellsImageView.kf.setImage(with: url)
-        cellsTimePostedLabel.text = "posted \(model.timePosted) ago"
+        cellsTimePostedLabel.text = "Posted \(postTime)"
     }
+    
 }

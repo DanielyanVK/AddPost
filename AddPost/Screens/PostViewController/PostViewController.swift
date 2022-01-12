@@ -17,16 +17,17 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     private let cellId = "PostCell"
     override func viewDidLoad() {
         super.viewDidLoad()
-    // Calling method we defined in FireStoreService allows us to thack changes and update dataSource when smth happens
+        // Calling method we defined in FireStoreService allows us to thack changes and update dataSource when smth happens
         firestore.listenUpdates {(posts) in
+            self.dataSource = []
             self.dataSource = posts
             print(self.dataSource.count)
             self.postsTableView.reloadData()
         }
-    // Table View default operations
+        // Table View default operations
         postsTableView.delegate = self
         
-    // Register Cell's xib
+        // Register Cell's xib
         let cellXib = UINib(nibName: cellId, bundle: .main)
         postsTableView.register(cellXib, forCellReuseIdentifier: cellId)
         postsTableView.dataSource = self
@@ -50,11 +51,10 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Displays information added from dataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = dataSource[indexPath.row]
-        if let cell = postsTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? PostCell {
-            // Using method we created in Post cell
-            cell.update(with: cellModel)
-        }
-        return UITableViewCell()
+        let cell = postsTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PostCell
+        // Using method we created in Post cell
+        cell.update(with: cellModel)
+        return cell
     }
 }
 

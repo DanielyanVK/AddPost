@@ -6,15 +6,13 @@
 //
 
 import Foundation
-
+// Allows to convert Date into String with format "time" ago
 extension Date
 {
     func calenderTimeSinceNow() -> String
     {
         let calendar = Calendar.current
-        
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self, to: Date())
-        
         let years = components.year!
         let months = components.month!
         let days = components.day!
@@ -39,6 +37,5 @@ extension Date
             return seconds == 1 ? "1 second ago" : "\(seconds) seconds ago"
         }
     }
-    
 }
 
