@@ -25,6 +25,7 @@ class PostController: NSObject {
     var postsTableView: UITableView? {
         return postViewController?.postsTableView
     }
+    
     // registering cell from Xib
     private let cellId = "PostCell"
     func registerCell() {
@@ -48,8 +49,15 @@ class PostController: NSObject {
         registerCell()
         postInteractor.listenUpdates()
         postsTableView?.reloadData()
+        dataProvider.delegate = self
     }
     
+}
+
+extension PostController: PostDataProviderDelegate {
+    func dataUpdated() {
+        postsTableView?.reloadData()
+    }
 }
 
 extension PostController: UITableViewDelegate {
