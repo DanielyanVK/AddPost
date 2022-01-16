@@ -1,18 +1,19 @@
 //
-//  FireStoreService.swift
+//  FireBaseImplementation.swift
 //  AddPost
 //
-//  Created by Vladislav on 05.01.2022.
+//  Created by Vladislav on 15.01.2022.
 //
+
 import Foundation
 import FirebaseFirestore
 import Firebase
 import FirebaseDatabase
 
-class FirestoreService {
+class FirestoreServiceImplementation {
     private init() {}
     // Creating singleton pattern and database to store data in Firestore
-    static let shared = FirestoreService()
+    static let shared = FirestoreServiceImplementation()
     private let database = Firestore.firestore()
     // Think of .collection basically as folder in Firestore
     private lazy var postReference = database.collection("posts")
@@ -39,7 +40,6 @@ class FirestoreService {
                 return
             }
             var posts = [PostModel]()
-            posts.removeAll()
             // getting unwrapped data
             let documents = unwrappedSnapshot.documents
             // unwrapping data as dictionary

@@ -11,6 +11,14 @@
 		E405D0F1278471F800AB423A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405D0EF278471F800AB423A /* PostCell.swift */; };
 		E405D0F2278471F800AB423A /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E405D0F0278471F800AB423A /* PostCell.xib */; };
 		E405D0F52784762B00AB423A /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405D0F42784762B00AB423A /* PostModel.swift */; };
+		E46FEF2B2792ADC900A1F7D6 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2A2792ADC900A1F7D6 /* PostController.swift */; };
+		E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */; };
+		E46FEF2F2792B3C000A1F7D6 /* PostDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */; };
+		E46FEF332792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF322792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift */; };
+		E46FEF352792C6DE00A1F7D6 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF342792C6DE00A1F7D6 /* PostInteractor.swift */; };
+		E46FEF392792D9DD00A1F7D6 /* StorageServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF382792D9DD00A1F7D6 /* StorageServiceImplementation.swift */; };
+		E46FEF3B2792E06700A1F7D6 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF3A2792E06700A1F7D6 /* AddPostController.swift */; };
+		E46FEF3D2793FF8100A1F7D6 /* AddPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */; };
 		E49AB833278C241700B78BD8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AB832278C241700B78BD8 /* Extensions.swift */; };
 		E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C48ED42784626A00CB63E2 /* AppDelegate.swift */; };
 		E4C48ED72784626A00CB63E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C48ED62784626A00CB63E2 /* SceneDelegate.swift */; };
@@ -32,6 +40,14 @@
 		E405D0EF278471F800AB423A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E405D0F0278471F800AB423A /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		E405D0F42784762B00AB423A /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		E46FEF2A2792ADC900A1F7D6 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataSource.swift; sourceTree = "<group>"; };
+		E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataProvider.swift; sourceTree = "<group>"; };
+		E46FEF322792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreServiceImplementation.swift; sourceTree = "<group>"; };
+		E46FEF342792C6DE00A1F7D6 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
+		E46FEF382792D9DD00A1F7D6 /* StorageServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceImplementation.swift; sourceTree = "<group>"; };
+		E46FEF3A2792E06700A1F7D6 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
+		E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostInteractor.swift; sourceTree = "<group>"; };
 		E49AB832278C241700B78BD8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4C48ED12784626A00CB63E2 /* AddPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C48ED42784626A00CB63E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +109,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E46FEF362792D97B00A1F7D6 /* FirebaseFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				E4E61CC72785F03300C92260 /* FireStoreService.swift */,
+				E46FEF322792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift */,
+			);
+			path = FirebaseFirestore;
+			sourceTree = "<group>";
+		};
+		E46FEF372792D99500A1F7D6 /* FirebaseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E4E61CC92785F04D00C92260 /* FireStorageService.swift */,
+				E46FEF382792D9DD00A1F7D6 /* StorageServiceImplementation.swift */,
+			);
+			path = FirebaseStorage;
+			sourceTree = "<group>";
+		};
 		E49AB831278C240100B78BD8 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,26 +182,32 @@
 		E4C48EE9278462A100CB63E2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E4C48EEA278462AC00CB63E2 /* PostViewController */,
+				E4C48EEA278462AC00CB63E2 /* Post */,
 				E4C48EEB278462C500CB63E2 /* AddPostViewController */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		E4C48EEA278462AC00CB63E2 /* PostViewController */ = {
+		E4C48EEA278462AC00CB63E2 /* Post */ = {
 			isa = PBXGroup;
 			children = (
 				E4C48EEC278462EA00CB63E2 /* PostViewController.swift */,
 				E4C48EED278462EA00CB63E2 /* PostViewController.xib */,
+				E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */,
+				E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */,
+				E46FEF2A2792ADC900A1F7D6 /* PostController.swift */,
+				E46FEF342792C6DE00A1F7D6 /* PostInteractor.swift */,
 			);
-			path = PostViewController;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		E4C48EEB278462C500CB63E2 /* AddPostViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E4C48EF0278462FA00CB63E2 /* AddPostViewController.swift */,
+				E46FEF3A2792E06700A1F7D6 /* AddPostController.swift */,
 				E4C48EF1278462FA00CB63E2 /* AddPostViewController.xib */,
+				E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */,
 			);
 			path = AddPostViewController;
 			sourceTree = "<group>";
@@ -184,8 +224,8 @@
 		E4E61CC42785E33A00C92260 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E4E61CC72785F03300C92260 /* FireStoreService.swift */,
-				E4E61CC92785F04D00C92260 /* FireStorageService.swift */,
+				E46FEF362792D97B00A1F7D6 /* FirebaseFirestore */,
+				E46FEF372792D99500A1F7D6 /* FirebaseStorage */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -312,8 +352,16 @@
 				E405D0F52784762B00AB423A /* PostModel.swift in Sources */,
 				E4C48EEE278462EA00CB63E2 /* PostViewController.swift in Sources */,
 				E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */,
+				E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */,
+				E46FEF3B2792E06700A1F7D6 /* AddPostController.swift in Sources */,
+				E46FEF3D2793FF8100A1F7D6 /* AddPostInteractor.swift in Sources */,
 				E4C48ED72784626A00CB63E2 /* SceneDelegate.swift in Sources */,
+				E46FEF2B2792ADC900A1F7D6 /* PostController.swift in Sources */,
+				E46FEF392792D9DD00A1F7D6 /* StorageServiceImplementation.swift in Sources */,
+				E46FEF332792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift in Sources */,
+				E46FEF352792C6DE00A1F7D6 /* PostInteractor.swift in Sources */,
 				E49AB833278C241700B78BD8 /* Extensions.swift in Sources */,
+				E46FEF2F2792B3C000A1F7D6 /* PostDataProvider.swift in Sources */,
 				E4E61CC82785F03300C92260 /* FireStoreService.swift in Sources */,
 				E4E61CCA2785F04D00C92260 /* FireStorageService.swift in Sources */,
 				E405D0F1278471F800AB423A /* PostCell.swift in Sources */,
@@ -461,6 +509,8 @@
 				DEVELOPMENT_TEAM = 2D43MDQ38V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AddPost/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Refactored;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -489,6 +539,8 @@
 				DEVELOPMENT_TEAM = 2D43MDQ38V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AddPost/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Refactored;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

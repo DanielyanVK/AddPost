@@ -1,16 +1,17 @@
 //
-//  FireStorageService.swift
+//  FireStorageImplementation.swift
 //  AddPost
 //
-//  Created by Vladislav on 05.01.2022.
+//  Created by Vladislav on 15.01.2022.
 //
 
-import UIKit
+import Foundation
 import FirebaseStorage
-
-class StorageService {
+// conforming to FireStorageService protocol
+// implementation should hold all the logic behind functions we defined in protocol
+class StorageServiceImplementation: FireStorageService {
     private init() {}
-    static let shared = StorageService()
+    static let shared = StorageServiceImplementation()
     // Similare to Database.database in FirebaseDatabase
     private let storage = Storage.storage()
     // Reference for all images(kind of lika a folder)

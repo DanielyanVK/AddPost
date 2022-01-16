@@ -14,9 +14,10 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak private var enterTextField: UITextField!
     @IBOutlet weak private var pickedImageView: UIImageView!
+  
+    // Assigning controller to ViewController
+    private lazy var controller: AddPostController = AddPostController(addPostViewController: self)
     
-    let firestore = FirestoreService.shared
-    let storage = StorageService.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         // basic delegate assignment
@@ -36,20 +37,12 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func saveButtonAction(_ sender: Any) {
         let timePosted = Date().timeIntervalSince1970
-        guard let textPosted = enterTextField.text,
-              let pickedImage = pickedImageView.image
-        else { return }
-        // calling upload image through singleton pattern
-        storage.uploadImage(pickedImage) { (imageUrl) in
-            // updating our data source
-            let dataSource = PostModel(textPosted: textPosted, imageSource: imageUrl, timePosted: timePosted)
-            // using save function for firebase firestore
-            self.firestore.save(dataSource) { (result) in
-                print(result)
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
+        let textPosted = enterTextField.text
+        let pickedImage = pickedImageView.image
+        // calling function from controller
+        controller.saveButtonAction(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
     }
+    
     // Functions for Picker
     // User finished picking photo.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
