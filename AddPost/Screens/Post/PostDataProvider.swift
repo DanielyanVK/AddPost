@@ -14,15 +14,21 @@ protocol PostDataProvidable {
     func getPost(by indexPath: IndexPath) -> PostModel
 }
 
+protocol PostDataProviderDelegate: AnyObject {
+    func dataUpdated()
+}
+
+
 class PostDataProvider: PostDataProvidable {
     
     typealias Model = PostModel
     private var models: [PostModel] = []
-
+    weak var delegate: PostDataProviderDelegate?
+    
     //Applying protocol finctions
     func setPosts(posts: [PostModel]) {
         self.models = posts
-        print(models.count)
+        delegate?.dataUpdated()
     }
     
     func numberOfSections() -> Int {

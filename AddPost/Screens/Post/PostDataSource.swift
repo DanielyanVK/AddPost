@@ -21,7 +21,7 @@ class PostDataSource: NSObject, UITableViewDataSource {
     // this one doesn't seem to work
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = dataProvider.getPost(by: indexPath)
-        let cell = postsTableView!.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         cell.update(with: cellModel)
         return cell
     }
