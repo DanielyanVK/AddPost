@@ -14,7 +14,7 @@ class AddPostController: NSObject {
     init(addPostViewController: AddPostViewController) {
         self.addPostViewController = addPostViewController
     }
-    // creating var to manipulate textfield within this class
+    // creating reference to manipulate views from ViewController
     var enterTextField: UITextField? {
         return addPostViewController?.enterTextField
     }
