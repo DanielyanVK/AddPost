@@ -18,6 +18,11 @@ protocol PostDataProviderDelegate: AnyObject {
     func dataUpdated()
 }
 
+protocol PostDataProviderDelegate: AnyObject {
+    func dataUpdated()
+}
+
+
 class PostDataProvider: PostDataProvidable {
     
     typealias Model = PostModel
