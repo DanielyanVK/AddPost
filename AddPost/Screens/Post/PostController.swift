@@ -59,13 +59,6 @@ class PostController: NSObject {
 extension PostController: PostDataProviderDelegate {
     func dataUpdated() {
         postsTableView?.reloadData()
-        dataProvider.delegate = self
-    }
-}
-
-extension PostController: PostDataProviderDelegate {
-    func dataUpdated() {
-        postsTableView?.reloadData()
     }
 }
 
