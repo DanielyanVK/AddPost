@@ -20,7 +20,6 @@ class AddPostIntercator {
             let dataSource = PostModel(textPosted: textPosted, imageSource: imageUrl, timePosted: timePosted)
             self.firestore.save(dataSource) { (result) in
                 print(result)
-                
             }
         }
     }

@@ -25,6 +25,7 @@ class PostController: NSObject {
     var postsTableView: UITableView? {
         return postViewController?.postsTableView
     }
+    
     // registering cell from Xib
     private let cellId = "PostCell"
     func registerCell() {
@@ -47,9 +48,18 @@ class PostController: NSObject {
         delegating()
         registerCell()
         postInteractor.listenUpdates()
+        // applying delegate we created in postdata provider
+        dataProvider.delegate = self
+        postsTableView?.rowHeight = 120
+    }
+}
+
+// extension to reload tableview data correctly
+// using delegate we created and defining actual functionality
+extension PostController: PostDataProviderDelegate {
+    func dataUpdated() {
         postsTableView?.reloadData()
     }
-    
 }
 
 extension PostController: UITableViewDelegate {

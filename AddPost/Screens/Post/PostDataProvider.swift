@@ -13,16 +13,24 @@ protocol PostDataProvidable {
     func setPosts(posts: [PostModel])
     func getPost(by indexPath: IndexPath) -> PostModel
 }
+// creates delegate to use to refresh data
+protocol PostDataProviderDelegate: AnyObject {
+    func dataUpdated()
+}
 
 class PostDataProvider: PostDataProvidable {
     
     typealias Model = PostModel
     private var models: [PostModel] = []
-
-    //Applying protocol finctions
+    // creating delegate for postdata provider and applying it in postController
+    weak var delegate: PostDataProviderDelegate?
+    
+    //Applying protocol functions
     func setPosts(posts: [PostModel]) {
         self.models = posts
-        print(models.count)
+    // very important to use here to refresh table view
+    // the call itself is hollow now but we define it later in postController via extension
+        delegate?.dataUpdated()
     }
     
     func numberOfSections() -> Int {

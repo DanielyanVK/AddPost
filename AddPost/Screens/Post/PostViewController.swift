@@ -8,7 +8,6 @@
 import UIKit
 
 class PostViewController: UIViewController {
-   
     
     @IBOutlet weak var postsTableView: UITableView!
     // Assigning controller to ViewController
@@ -21,12 +20,6 @@ class PostViewController: UIViewController {
     // Move to screen where we add data to post
     @IBAction func plusButtonAction(_ sender: Any) {
         controller.plusButtonAction()
-    }
-    
-    
-    // Sets height of Row
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0;//Choose your custom row height
     }
 }
 

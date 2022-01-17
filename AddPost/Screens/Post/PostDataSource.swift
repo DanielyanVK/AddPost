@@ -13,15 +13,10 @@ class PostDataSource: NSObject, UITableViewDataSource {
     init (dataProvider: PostDataProvidable) {
         self.dataProvider = dataProvider
     }
-    // creating reference to use in dequeueReusableCell
-    weak var postViewController: PostViewController?
-    var postsTableView: UITableView? {
-        return postViewController?.postsTableView
-    }
-    // this one doesn't seem to work
+    // Defining tableView functions here
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = dataProvider.getPost(by: indexPath)
-        let cell = postsTableView!.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         cell.update(with: cellModel)
         return cell
     }
@@ -33,5 +28,4 @@ class PostDataSource: NSObject, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         dataProvider.numberOfSections()
     }
-    
 }
