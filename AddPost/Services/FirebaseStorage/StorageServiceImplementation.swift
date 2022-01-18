@@ -10,9 +10,9 @@ import FirebaseStorage
 // conforming to FireStorageService protocol
 // implementation should hold all the logic behind functions we defined in protocol
 class StorageServiceImplementation: FireStorageService {
-    private init() {}
-    static let shared = StorageServiceImplementation()
-    // Similare to Database.database in FirebaseDatabase
+    // init to use methods of class in other instances
+    init() {}
+    // Similar to Database.database in FirebaseDatabase
     private let storage = Storage.storage()
     // Reference for all images(kind of lika a folder)
     private lazy var imagesReference = storage.reference().child("images")

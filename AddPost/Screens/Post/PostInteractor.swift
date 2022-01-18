@@ -10,17 +10,17 @@ import FirebaseDatabase
 import FirebaseFirestore
 
 class PostInteractor {
-    // calling for singleton
-    let firestore = FirestoreServiceImplementation.shared
-    // getting access to DataProvider through protocil
+    // getting access to DataProvider through protocol
     var dataProvider: PostDataProvidable?
     init(dataProvider: PostDataProvidable) {
         self.dataProvider = dataProvider
     }
-    // getting listenUpdates method we defined in firestore implementation through singleton
+    // getting reference for FirestoreService protocols hollow function and add functionality to it through firestoreserviceimplementation
+    private let firestoreService: FirestoreService = FirestoreServiceImplementation()
+    // getting listenUpdates method we defined in firestore implementation
     // using setposts function from dataprovider to assign value we got from server
     func listenUpdates() {
-        firestore.listenUpdates { (posts) in
+        firestoreService.listenUpdates { (posts) in
             self.dataProvider?.setPosts(posts: posts)
         }
     }

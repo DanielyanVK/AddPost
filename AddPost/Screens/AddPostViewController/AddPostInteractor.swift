@@ -11,14 +11,15 @@ import FirebaseFirestore
 import FirebaseDatabase
 
 class AddPostIntercator {
-    let firestore = FirestoreServiceImplementation.shared
-    let storage = StorageServiceImplementation.shared
+
+    private let firestoreService: FirestoreService = FirestoreServiceImplementation()
+    private let fireStorageService: FireStorageService = StorageServiceImplementation()
     // Defining how we upload image and save data
     func uploadAndSend(timePosted: TimeInterval, textPosted: String, pickedImage: UIImage) {
-        storage.uploadImage(pickedImage) {(imageUrl) in
+        fireStorageService.uploadImage(pickedImage) {(imageUrl) in
             // updating our data source
             let dataSource = PostModel(textPosted: textPosted, imageSource: imageUrl, timePosted: timePosted)
-            self.firestore.save(dataSource) { (result) in
+            self.firestoreService.save(dataSource) { (result) in
                 print(result)
             }
         }

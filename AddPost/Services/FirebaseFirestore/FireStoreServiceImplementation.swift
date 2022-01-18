@@ -10,10 +10,10 @@ import FirebaseFirestore
 import Firebase
 import FirebaseDatabase
 
-class FirestoreServiceImplementation {
-    private init() {}
-    // Creating singleton pattern and database to store data in Firestore
-    static let shared = FirestoreServiceImplementation()
+class FirestoreServiceImplementation: FirestoreService {
+   // init to use methods of class in other instances
+    init() {}
+
     private let database = Firestore.firestore()
     // Think of .collection basically as folder in Firestore
     private lazy var postReference = database.collection("posts")
