@@ -11,4 +11,5 @@ target 'AddPost' do
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
 	pod 'Kingfisher'
+	pod 'Swinject'
 end

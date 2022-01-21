@@ -12,23 +12,23 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var enterTextField: UITextField!
     @IBOutlet weak var pickedImageView: UIImageView!
     
-    // Assigning controller to ViewController
-    private lazy var controller: AddPostController = AddPostController(addPostViewController: self)
+    // Assigning presenter to ViewController
+    private lazy var presenter: AddPostPresenter = AddPostPresenter(addPostViewController: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.viewDidLoad()
+        presenter.viewDidLoad()
     }
     
     @IBAction func pickPhotoButtonAction(_ sender: Any) {
-        controller.pickPhotoButtonAction()
+        presenter.pickPhotoButtonAction()
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
         let timePosted = Date().timeIntervalSince1970
         let textPosted = enterTextField.text
         let pickedImage = pickedImageView.image
-        // calling function from controller
-        controller.saveButtonAction(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
+        // calling function from presenter
+        presenter.saveButtonAction(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
     }
 }

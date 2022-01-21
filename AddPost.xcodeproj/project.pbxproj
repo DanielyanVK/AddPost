@@ -11,13 +11,13 @@
 		E405D0F1278471F800AB423A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405D0EF278471F800AB423A /* PostCell.swift */; };
 		E405D0F2278471F800AB423A /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E405D0F0278471F800AB423A /* PostCell.xib */; };
 		E405D0F52784762B00AB423A /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405D0F42784762B00AB423A /* PostModel.swift */; };
-		E46FEF2B2792ADC900A1F7D6 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2A2792ADC900A1F7D6 /* PostController.swift */; };
+		E46FEF2B2792ADC900A1F7D6 /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2A2792ADC900A1F7D6 /* PostPresenter.swift */; };
 		E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */; };
 		E46FEF2F2792B3C000A1F7D6 /* PostDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */; };
 		E46FEF332792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF322792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift */; };
 		E46FEF352792C6DE00A1F7D6 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF342792C6DE00A1F7D6 /* PostInteractor.swift */; };
 		E46FEF392792D9DD00A1F7D6 /* StorageServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF382792D9DD00A1F7D6 /* StorageServiceImplementation.swift */; };
-		E46FEF3B2792E06700A1F7D6 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF3A2792E06700A1F7D6 /* AddPostController.swift */; };
+		E46FEF3B2792E06700A1F7D6 /* AddPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF3A2792E06700A1F7D6 /* AddPostPresenter.swift */; };
 		E46FEF3D2793FF8100A1F7D6 /* AddPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */; };
 		E49AB833278C241700B78BD8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AB832278C241700B78BD8 /* Extensions.swift */; };
 		E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C48ED42784626A00CB63E2 /* AppDelegate.swift */; };
@@ -29,6 +29,10 @@
 		E4C48EF2278462FA00CB63E2 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C48EF0278462FA00CB63E2 /* AddPostViewController.swift */; };
 		E4C48EF3278462FA00CB63E2 /* AddPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C48EF1278462FA00CB63E2 /* AddPostViewController.xib */; };
 		E4C48EF52784689C00CB63E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4C48EF42784689C00CB63E2 /* GoogleService-Info.plist */; };
+		E4CCA844279AA6EA00BBCD60 /* Containerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCA843279AA6EA00BBCD60 /* Containerable.swift */; };
+		E4CCA847279AA71A00BBCD60 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCA846279AA71A00BBCD60 /* MainContainer.swift */; };
+		E4CCA849279AA74400BBCD60 /* PostContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCA848279AA74400BBCD60 /* PostContainer.swift */; };
+		E4CCA84D279AA80000BBCD60 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCA84C279AA80000BBCD60 /* MainRouter.swift */; };
 		E4E61CC82785F03300C92260 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E61CC72785F03300C92260 /* FireStoreService.swift */; };
 		E4E61CCA2785F04D00C92260 /* FireStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E61CC92785F04D00C92260 /* FireStorageService.swift */; };
 /* End PBXBuildFile section */
@@ -40,13 +44,13 @@
 		E405D0EF278471F800AB423A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E405D0F0278471F800AB423A /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		E405D0F42784762B00AB423A /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
-		E46FEF2A2792ADC900A1F7D6 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		E46FEF2A2792ADC900A1F7D6 /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataSource.swift; sourceTree = "<group>"; };
 		E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataProvider.swift; sourceTree = "<group>"; };
 		E46FEF322792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreServiceImplementation.swift; sourceTree = "<group>"; };
 		E46FEF342792C6DE00A1F7D6 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
 		E46FEF382792D9DD00A1F7D6 /* StorageServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceImplementation.swift; sourceTree = "<group>"; };
-		E46FEF3A2792E06700A1F7D6 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
+		E46FEF3A2792E06700A1F7D6 /* AddPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostPresenter.swift; sourceTree = "<group>"; };
 		E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostInteractor.swift; sourceTree = "<group>"; };
 		E49AB832278C241700B78BD8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4C48ED12784626A00CB63E2 /* AddPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,10 @@
 		E4C48EF0278462FA00CB63E2 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		E4C48EF1278462FA00CB63E2 /* AddPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostViewController.xib; sourceTree = "<group>"; };
 		E4C48EF42784689C00CB63E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4CCA843279AA6EA00BBCD60 /* Containerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Containerable.swift; sourceTree = "<group>"; };
+		E4CCA846279AA71A00BBCD60 /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
+		E4CCA848279AA74400BBCD60 /* PostContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContainer.swift; sourceTree = "<group>"; };
+		E4CCA84C279AA80000BBCD60 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		E4E61CC72785F03300C92260 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
 		E4E61CC92785F04D00C92260 /* FireStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +164,10 @@
 		E4C48ED32784626A00CB63E2 /* AddPost */ = {
 			isa = PBXGroup;
 			children = (
+				E4CCA842279AA6DC00BBCD60 /* Protocols */,
+				E4CCA845279AA70700BBCD60 /* Containers */,
+				E4CCA84A279AA7CD00BBCD60 /* Assembly */,
+				E4CCA84B279AA7EE00BBCD60 /* Router */,
 				E4C48EE9278462A100CB63E2 /* Screens */,
 				E4C48EE82784628700CB63E2 /* Delegates */,
 				E405D0EE278471D000AB423A /* Custom Views */,
@@ -191,9 +203,8 @@
 		E4C48EEA278462AC00CB63E2 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				E4C48EEC278462EA00CB63E2 /* PostViewController.swift */,
-				E4C48EED278462EA00CB63E2 /* PostViewController.xib */,
-				E46FEF2A2792ADC900A1F7D6 /* PostController.swift */,
+				E4CCA840279AA50000BBCD60 /* View */,
+				E46FEF2A2792ADC900A1F7D6 /* PostPresenter.swift */,
 				E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */,
 				E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */,
 				E46FEF342792C6DE00A1F7D6 /* PostInteractor.swift */,
@@ -204,12 +215,61 @@
 		E4C48EEB278462C500CB63E2 /* AddPostViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E4C48EF0278462FA00CB63E2 /* AddPostViewController.swift */,
-				E46FEF3A2792E06700A1F7D6 /* AddPostController.swift */,
-				E4C48EF1278462FA00CB63E2 /* AddPostViewController.xib */,
+				E4CCA841279AA53F00BBCD60 /* View */,
+				E46FEF3A2792E06700A1F7D6 /* AddPostPresenter.swift */,
 				E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */,
 			);
 			path = AddPostViewController;
+			sourceTree = "<group>";
+		};
+		E4CCA840279AA50000BBCD60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4C48EEC278462EA00CB63E2 /* PostViewController.swift */,
+				E4C48EED278462EA00CB63E2 /* PostViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4CCA841279AA53F00BBCD60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4C48EF0278462FA00CB63E2 /* AddPostViewController.swift */,
+				E4C48EF1278462FA00CB63E2 /* AddPostViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4CCA842279AA6DC00BBCD60 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E4CCA843279AA6EA00BBCD60 /* Containerable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E4CCA845279AA70700BBCD60 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				E4CCA846279AA71A00BBCD60 /* MainContainer.swift */,
+				E4CCA848279AA74400BBCD60 /* PostContainer.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		E4CCA84A279AA7CD00BBCD60 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E4CCA84B279AA7EE00BBCD60 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E4CCA84C279AA80000BBCD60 /* MainRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		E4E61CC32785C28300C92260 /* PostCell */ = {
@@ -353,15 +413,19 @@
 				E4C48EEE278462EA00CB63E2 /* PostViewController.swift in Sources */,
 				E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */,
 				E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */,
-				E46FEF3B2792E06700A1F7D6 /* AddPostController.swift in Sources */,
+				E46FEF3B2792E06700A1F7D6 /* AddPostPresenter.swift in Sources */,
 				E46FEF3D2793FF8100A1F7D6 /* AddPostInteractor.swift in Sources */,
+				E4CCA849279AA74400BBCD60 /* PostContainer.swift in Sources */,
+				E4CCA84D279AA80000BBCD60 /* MainRouter.swift in Sources */,
 				E4C48ED72784626A00CB63E2 /* SceneDelegate.swift in Sources */,
-				E46FEF2B2792ADC900A1F7D6 /* PostController.swift in Sources */,
+				E46FEF2B2792ADC900A1F7D6 /* PostPresenter.swift in Sources */,
 				E46FEF392792D9DD00A1F7D6 /* StorageServiceImplementation.swift in Sources */,
 				E46FEF332792BBFE00A1F7D6 /* FireStoreServiceImplementation.swift in Sources */,
 				E46FEF352792C6DE00A1F7D6 /* PostInteractor.swift in Sources */,
 				E49AB833278C241700B78BD8 /* Extensions.swift in Sources */,
+				E4CCA844279AA6EA00BBCD60 /* Containerable.swift in Sources */,
 				E46FEF2F2792B3C000A1F7D6 /* PostDataProvider.swift in Sources */,
+				E4CCA847279AA71A00BBCD60 /* MainContainer.swift in Sources */,
 				E4E61CC82785F03300C92260 /* FireStoreService.swift in Sources */,
 				E4E61CCA2785F04D00C92260 /* FireStorageService.swift in Sources */,
 				E405D0F1278471F800AB423A /* PostCell.swift in Sources */,

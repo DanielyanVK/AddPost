@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddPostController: NSObject {
+class AddPostPresenter: NSObject {
     // giving AddPostViewController to class
     weak var addPostViewController: AddPostViewController?
     // giving access to AddPostViewController
@@ -62,7 +62,7 @@ class AddPostController: NSObject {
     }
 }
 // Creating extensions to apply delegates we need for ViewController
-extension AddPostController: UITextFieldDelegate {
+extension AddPostPresenter: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -70,9 +70,9 @@ extension AddPostController: UITextFieldDelegate {
 }
 // Extensions for imageView Picker
 // Note: Make sure Controller class has these extensions in order for picker to work
-extension AddPostController: UIImagePickerControllerDelegate {
+extension AddPostPresenter: UIImagePickerControllerDelegate {
     
 }
-extension AddPostController: UINavigationControllerDelegate {
+extension AddPostPresenter: UINavigationControllerDelegate {
     
 }

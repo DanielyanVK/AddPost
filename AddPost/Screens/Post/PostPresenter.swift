@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-// Thic class imitates our TableView Datasource. For it to get data we will use PostDataProvider
-class PostController: NSObject {
+// Presenter class for our viewController
+class PostPresenter: NSObject {
     // giving PostViewController to class
     weak var postViewController: PostViewController?
     // Assigning Data Provider
@@ -56,12 +56,12 @@ class PostController: NSObject {
 
 // extension to reload tableview data correctly
 // using delegate we created and defining actual functionality
-extension PostController: PostDataProviderDelegate {
+extension PostPresenter: PostDataProviderDelegate {
     func dataUpdated() {
         postsTableView?.reloadData()
     }
 }
 
-extension PostController: UITableViewDelegate {
+extension PostPresenter: UITableViewDelegate {
     
 }

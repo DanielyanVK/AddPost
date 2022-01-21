@@ -10,16 +10,16 @@ import UIKit
 class PostViewController: UIViewController {
     
     @IBOutlet weak var postsTableView: UITableView!
-    // Assigning controller to ViewController
-    private lazy var controller: PostController = PostController(postViewController: self)
+    // Assigning presenter to ViewController
+    private lazy var presenter: PostPresenter = PostPresenter(postViewController: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.viewDidLoad()
+        presenter.viewDidLoad()
     }
     // Move to screen where we add data to post
     @IBAction func plusButtonAction(_ sender: Any) {
-        controller.plusButtonAction()
+        presenter.plusButtonAction()
     }
 }
 
