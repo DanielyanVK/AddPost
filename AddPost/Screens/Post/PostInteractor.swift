@@ -11,16 +11,16 @@ import FirebaseFirestore
 
 class PostInteractor {
     // getting access to DataProvider through protocol
-    var dataProvider: PostDataProvidable?
-    init(dataProvider: PostDataProvidable) {
+    private let dataProvider: PostDataProvidable?
+    init(dataProvider: PostDataProvidable?) {
         self.dataProvider = dataProvider
     }
     // getting reference for FirestoreService protocols hollow function and add functionality to it through firestoreserviceimplementation
-    private let firestoreService: FirestoreService = FirestoreServiceImplementation()
+    var firestoreService: FirestoreService?
     // getting listenUpdates method we defined in firestore implementation
     // using setposts function from dataprovider to assign value we got from server
     func listenUpdates() {
-        firestoreService.listenUpdates { (posts) in
+        firestoreService?.listenUpdates { (posts) in
             self.dataProvider?.setPosts(posts: posts)
         }
     }

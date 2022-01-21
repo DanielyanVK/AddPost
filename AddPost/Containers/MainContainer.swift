@@ -16,12 +16,16 @@ import Swinject
 
 class MainContainer {
     // creating init of and array of Containerable protocol that all our child containers conform to and passing it to init
-    private let containers: [Containerable]
+    private var containers: [Containerable] = []
     // we will refer to root container whenever we need to do anything involving MainContainer's functions
     let rootContainer: Container = Container()
     
-    init(containers: [Containerable]) {
+    func register(containers: [Containerable]) {
         self.containers = containers
+        containers.forEach { (container) in
+            container.register()
+        }
+        
     }
     // We have to collect all smaller containers in to main one and register them
     func setup() {

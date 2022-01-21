@@ -11,15 +11,14 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var postsTableView: UITableView!
     // Assigning presenter to ViewController
-    private lazy var presenter: PostPresenter = PostPresenter(postViewController: self)
+    var presenter: PostPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        presenter?.viewDidLoad()
     }
     // Move to screen where we add data to post
     @IBAction func plusButtonAction(_ sender: Any) {
-        presenter.plusButtonAction()
+        presenter?.plusButtonAction()
     }
 }
-

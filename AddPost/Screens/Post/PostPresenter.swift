@@ -10,20 +10,18 @@ import UIKit
 // Presenter class for our viewController
 class PostPresenter: NSObject {
     // giving PostViewController to class
-    weak var postViewController: PostViewController?
+    var view: PostViewController?
     // Assigning Data Provider
     private let dataProvider = PostDataProvider()
     // Initializing PostDataSource in our controller
     private lazy var dataSource = PostDataSource(dataProvider: dataProvider)
     // Initializing post interactor
-    private lazy var postInteractor = PostInteractor(dataProvider: dataProvider)
-    // giving access to PostViewController
-    init(postViewController: PostViewController) {
-        self.postViewController = postViewController
-    }
+    var interactor: PostInteractor?
+    
+    
     // creating var to manipulate tableview within this class
     var postsTableView: UITableView? {
-        return postViewController?.postsTableView
+        return view?.postsTableView
     }
     
     // registering cell from Xib
@@ -41,13 +39,13 @@ class PostPresenter: NSObject {
     // action for Plus Button
     func plusButtonAction() {
         let nextVC = AddPostViewController()
-        postViewController?.navigationController?.pushViewController(nextVC, animated: true)
+        view?.navigationController?.pushViewController(nextVC, animated: true)
     }
     // method to get data from server and keep it updated
     func viewDidLoad() {
         delegating()
         registerCell()
-        postInteractor.listenUpdates()
+        interactor?.listenUpdates()
         // applying delegate we created in postdata provider
         dataProvider.delegate = self
         postsTableView?.rowHeight = 120
