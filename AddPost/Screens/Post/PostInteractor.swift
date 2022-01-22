@@ -20,8 +20,7 @@ class PostInteractor {
     // getting listenUpdates method we defined in firestore implementation
     // using setposts function from dataprovider to assign value we got from server
     func listenUpdates() {
-        firestoreService?.listenUpdates { (posts) in
-            self.dataProvider?.setPosts(posts: posts)
+        firestoreService?.listenUpdates { (posts) in            self.dataProvider?.setPosts(posts: posts)
         }
     }
 }

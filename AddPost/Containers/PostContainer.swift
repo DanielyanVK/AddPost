@@ -23,24 +23,8 @@ class PostContainer: Containerable {
     func register() {
         // Connection between ViewController and Presenter
         rootContainer.register(PostViewController.self) { (r) -> PostViewController in
-            let viewController = PostViewController()
-            viewController.presenter = r.resolve(PostPresenter.self)
-            return viewController
+            return PostAssembly(firestoreService: r.resolve(FirestoreService.self)!,
+                                postDataProvidable: r.resolve(PostDataProvidable.self)!).assembly()!
         }
-        // Presenter's connections with ViewController and Interactor
-        rootContainer.register(PostPresenter.self) { (r) -> PostPresenter in
-            let presenter = PostPresenter()
-            presenter.view = r.resolve(PostViewController.self)
-            presenter.interactor = r.resolve(PostInteractor.self)
-            return presenter
-        }
-        // Interactor's connection with dataprovider(through init) and fireStoreService
-        rootContainer.register(PostInteractor.self) { (r) -> PostInteractor in
-            let interactor = PostInteractor(dataProvider: r.resolve(PostDataProvidable.self))
-            interactor.firestoreService = r.resolve(FirestoreService.self)
-            return interactor
-        }
-        
-        
     }
 }

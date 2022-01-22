@@ -19,7 +19,8 @@ class ContainersController {
         let containers: [Containerable] = [
             PostContainer(mainContainer: mainContainer),
             PostDataProviderContainer(mainContainer: mainContainer),
-            FireStoreServiceContainer(mainContainer: mainContainer)
+            FireStoreServiceContainer(mainContainer: mainContainer),
+            PostDataSourceContainer(mainContainer: mainContainer)
         ]
         mainContainer.register(containers: containers)
         

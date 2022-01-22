@@ -10,14 +10,13 @@ import UIKit
 // Presenter class for our viewController
 class PostPresenter: NSObject {
     // giving PostViewController to class
-    var view: PostViewController?
+    weak var view: PostViewController?
     // Assigning Data Provider
-    private let dataProvider = PostDataProvider()
+    var dataProvider: PostDataProvidable?
     // Initializing PostDataSource in our controller
-    private lazy var dataSource = PostDataSource(dataProvider: dataProvider)
+    var dataSource: PostDataSource?
     // Initializing post interactor
     var interactor: PostInteractor?
-    
     
     // creating var to manipulate tableview within this class
     var postsTableView: UITableView? {
@@ -47,7 +46,7 @@ class PostPresenter: NSObject {
         registerCell()
         interactor?.listenUpdates()
         // applying delegate we created in postdata provider
-        dataProvider.delegate = self
+        dataProvider?.delegate = self
         postsTableView?.rowHeight = 120
     }
 }

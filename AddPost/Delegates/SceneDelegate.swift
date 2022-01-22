@@ -10,15 +10,20 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var postVC: PostViewController?
-
+    
+    private let mainContainer = MainContainer()
+    private lazy var containersController = ContainersController(mainContainer: mainContainer)
+    private lazy var rootRouter = RootRouter(mainContainer: mainContainer)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
+        containersController.setup()
+
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: PostViewController())
+        rootRouter.root(window, scene: scene)
+        
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

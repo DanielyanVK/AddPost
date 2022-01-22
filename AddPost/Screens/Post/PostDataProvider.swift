@@ -12,6 +12,7 @@ protocol PostDataProvidable {
     func numberOfRows(in section: Int) -> Int
     func setPosts(posts: [PostModel])
     func getPost(by indexPath: IndexPath) -> PostModel
+    var delegate: PostDataProviderDelegate? {get set}
 }
 // creates delegate to use to refresh data
 protocol PostDataProviderDelegate: AnyObject {
