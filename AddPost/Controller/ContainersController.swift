@@ -6,7 +6,7 @@
 //
 
 import Swinject
-
+// here we setup containers. We should mention all containers in setup method.
 class ContainersController {
     
     private let mainContainer: MainContainer
@@ -20,7 +20,10 @@ class ContainersController {
             PostContainer(mainContainer: mainContainer),
             PostDataProviderContainer(mainContainer: mainContainer),
             FireStoreServiceContainer(mainContainer: mainContainer),
-            PostDataSourceContainer(mainContainer: mainContainer)
+            PostDataSourceContainer(mainContainer: mainContainer),
+            FireStorageServiceContainer(mainContainer: mainContainer),
+            AddPostContainer(mainContainer: mainContainer),
+            PostRouterContainer(mainContainer: mainContainer)
         ]
         mainContainer.register(containers: containers)
         

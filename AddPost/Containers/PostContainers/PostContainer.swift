@@ -24,7 +24,9 @@ class PostContainer: Containerable {
         // Connection between ViewController and Presenter
         rootContainer.register(PostViewController.self) { (r) -> PostViewController in
             return PostAssembly(firestoreService: r.resolve(FirestoreService.self)!,
-                                postDataProvidable: r.resolve(PostDataProvidable.self)!).assembly()!
+                                postDataProvidable: r.resolve(PostDataProvidable.self)!, mainContainer: self.mainContainer,
+                                postRoutable: r.resolve(PostRoutable.self)!)
+                .assembly()!
         }
     }
 }

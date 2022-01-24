@@ -18,6 +18,10 @@ class AddPostContainer: Containerable {
         self.mainContainer = mainContainer
     }
     func register() {
-        
+        rootContainer.register(AddPostViewController.self) { (r) -> AddPostViewController in
+            return AddPostAssembly(fireStoreService: r.resolve(FirestoreService.self)!,
+                                   fireStorageService: r.resolve(FireStorageService.self)!)
+                .assembly()!
+        }
     }
 }

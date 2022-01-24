@@ -9,20 +9,18 @@ import UIKit
 
 class AddPostPresenter: NSObject {
     // giving AddPostViewController to class
-    weak var addPostViewController: AddPostViewController?
-    // giving access to AddPostViewController
-    init(addPostViewController: AddPostViewController) {
-        self.addPostViewController = addPostViewController
-    }
+   weak var view: AddPostViewController?
+    
+    // Initializing post interactor
+    var interactor: AddPostIntercator?
+    
     // creating var to manipulate textfield within this class
     var enterTextField: UITextField? {
-        return addPostViewController?.enterTextField
+        return view?.enterTextField
     }
     var pickedImageView: UIImageView? {
-        return addPostViewController?.pickedImageView
+        return view?.pickedImageView
     }
-    // Initializing post interactor
-    private let addPostInteractor = AddPostIntercator()
     
     // adding action to button in AddPostViewController
     func saveButtonAction(timePosted: TimeInterval?, textPosted: String?, pickedImage: UIImage?) {
@@ -31,8 +29,8 @@ class AddPostPresenter: NSObject {
               let pickedImage = pickedImage
         else {return}
         // Calling method we defined in interactor to upload image and save data on server
-        addPostInteractor.uploadAndSend(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
-        addPostViewController?.navigationController?.popViewController(animated: true)
+        interactor?.uploadAndSend(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
+        view?.navigationController?.popViewController(animated: true)
     }
     
     func pickPhotoButtonAction() {
@@ -41,7 +39,7 @@ class AddPostPresenter: NSObject {
         picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.allowsEditing = true
-        addPostViewController?.present(picker, animated: true)
+        view?.present(picker, animated: true)
     }
     
     func viewDidLoad() {

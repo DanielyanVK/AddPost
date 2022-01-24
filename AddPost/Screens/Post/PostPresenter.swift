@@ -18,6 +18,8 @@ class PostPresenter: NSObject {
     // Initializing post interactor
     var interactor: PostInteractor?
     
+    var router: PostRoutable?
+    
     // creating var to manipulate tableview within this class
     var postsTableView: UITableView? {
         return view?.postsTableView
@@ -37,8 +39,9 @@ class PostPresenter: NSObject {
     }
     // action for Plus Button
     func plusButtonAction() {
-        let nextVC = AddPostViewController()
-        view?.navigationController?.pushViewController(nextVC, animated: true)
+        
+        router?.pushToAddPost()
+        
     }
     // method to get data from server and keep it updated
     func viewDidLoad() {
