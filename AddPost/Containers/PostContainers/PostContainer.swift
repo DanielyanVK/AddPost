@@ -27,6 +27,6 @@ class PostContainer: Containerable {
                                 postDataProvidable: r.resolve(PostDataProvidable.self)!, mainContainer: self.mainContainer,
                                 postRoutable: r.resolve(PostRoutable.self)!)
                 .assembly()!
-        }
+        }.inObjectScope(.container)
     }
 }

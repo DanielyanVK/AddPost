@@ -22,6 +22,7 @@ class PostRouter: PostRoutable {
     func pushToAddPost() {
         let homeVC = mainContainer.rootContainer.resolve(PostViewController.self)
         let nextVC = mainContainer.rootContainer.resolve(AddPostViewController.self)
+        print("test")
         homeVC?.navigationController?.pushViewController((nextVC)!, animated: true)
     }
 }

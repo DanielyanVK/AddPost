@@ -22,6 +22,6 @@ class AddPostContainer: Containerable {
             return AddPostAssembly(fireStoreService: r.resolve(FirestoreService.self)!,
                                    fireStorageService: r.resolve(FireStorageService.self)!)
                 .assembly()!
-        }
+        }.inObjectScope(.container)
     }
 }
