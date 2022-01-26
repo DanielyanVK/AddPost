@@ -12,7 +12,7 @@ class FireStorageServiceContainer: Containerable {
     required init(mainContainer: MainContainer) {
         self.mainContainer = mainContainer
     }
-    
+    // Registering StorageServiceImplementation with FireStorageService protocol
     func register() {
         rootContainer.register(FireStorageService.self) { (r) -> FireStorageService in
             return StorageServiceImplementation()

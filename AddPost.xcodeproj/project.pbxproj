@@ -13,8 +13,8 @@
 		E405D0F52784762B00AB423A /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405D0F42784762B00AB423A /* PostModel.swift */; };
 		E443E6E7279D2E7F0087804E /* AddPostAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443E6E6279D2E7F0087804E /* AddPostAssembly.swift */; };
 		E443E6E9279D30E10087804E /* FireStorageServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443E6E8279D30E10087804E /* FireStorageServiceContainer.swift */; };
-		E443E6F0279E98640087804E /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443E6EF279E98640087804E /* PostRouter.swift */; };
-		E443E6F2279E99560087804E /* PostRouterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443E6F1279E99560087804E /* PostRouterContainer.swift */; };
+		E443E6F0279E98640087804E /* AddPostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443E6EF279E98640087804E /* AddPostRouter.swift */; };
+		E443E6F2279E99560087804E /* AddPostRouterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443E6F1279E99560087804E /* AddPostRouterContainer.swift */; };
 		E46FEF2B2792ADC900A1F7D6 /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2A2792ADC900A1F7D6 /* PostPresenter.swift */; };
 		E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */; };
 		E46FEF2F2792B3C000A1F7D6 /* PostDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */; };
@@ -56,8 +56,8 @@
 		E405D0F42784762B00AB423A /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		E443E6E6279D2E7F0087804E /* AddPostAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostAssembly.swift; sourceTree = "<group>"; };
 		E443E6E8279D30E10087804E /* FireStorageServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStorageServiceContainer.swift; sourceTree = "<group>"; };
-		E443E6EF279E98640087804E /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
-		E443E6F1279E99560087804E /* PostRouterContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouterContainer.swift; sourceTree = "<group>"; };
+		E443E6EF279E98640087804E /* AddPostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostRouter.swift; sourceTree = "<group>"; };
+		E443E6F1279E99560087804E /* AddPostRouterContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostRouterContainer.swift; sourceTree = "<group>"; };
 		E46FEF2A2792ADC900A1F7D6 /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		E46FEF2C2792B14700A1F7D6 /* PostDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataSource.swift; sourceTree = "<group>"; };
 		E46FEF2E2792B3C000A1F7D6 /* PostDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataProvider.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				E4801D1D279B1663003CB396 /* RootRouter.swift */,
-				E443E6EF279E98640087804E /* PostRouter.swift */,
+				E443E6EF279E98640087804E /* AddPostRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -303,7 +303,6 @@
 				E4D995F2279AE2BE003308D0 /* PostContainers */,
 				E443E6E3279D2DEA0087804E /* ServiceContainers */,
 				E4D995F7279AE328003308D0 /* AddPostContainers */,
-				E443E6F1279E99560087804E /* PostRouterContainer.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -338,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D995F8279AE34B003308D0 /* AddPostContainer.swift */,
+				E443E6F1279E99560087804E /* AddPostRouterContainer.swift */,
 			);
 			path = AddPostContainers;
 			sourceTree = "<group>";
@@ -482,13 +482,13 @@
 				E405D0F52784762B00AB423A /* PostModel.swift in Sources */,
 				E4C48EEE278462EA00CB63E2 /* PostViewController.swift in Sources */,
 				E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */,
-				E443E6F0279E98640087804E /* PostRouter.swift in Sources */,
+				E443E6F0279E98640087804E /* AddPostRouter.swift in Sources */,
 				E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */,
 				E4D995F1279AE262003308D0 /* ContainersController.swift in Sources */,
 				E46FEF3B2792E06700A1F7D6 /* AddPostPresenter.swift in Sources */,
 				E46FEF3D2793FF8100A1F7D6 /* AddPostInteractor.swift in Sources */,
 				E443E6E9279D30E10087804E /* FireStorageServiceContainer.swift in Sources */,
-				E443E6F2279E99560087804E /* PostRouterContainer.swift in Sources */,
+				E443E6F2279E99560087804E /* AddPostRouterContainer.swift in Sources */,
 				E4CCA849279AA74400BBCD60 /* PostContainer.swift in Sources */,
 				E4D995F4279AE2E1003308D0 /* PostDataProviderContainer.swift in Sources */,
 				E4C48ED72784626A00CB63E2 /* SceneDelegate.swift in Sources */,

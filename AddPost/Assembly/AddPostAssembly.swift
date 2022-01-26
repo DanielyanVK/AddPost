@@ -7,8 +7,9 @@
 import UIKit
 import Swinject
 
+// Same assembly process I've described in PostAssembly
 class AddPostAssembly {
-   
+    
     private let fireStoreService: FirestoreService
     private let fireStorageService: FireStorageService
     
@@ -16,18 +17,17 @@ class AddPostAssembly {
         self.fireStoreService = fireStoreService
         self.fireStorageService = fireStorageService
     }
- 
     
     func assembly() -> AddPostViewController? {
-      let vc = AddPostViewController()
-      let presenter = AddPostPresenter()
-      let interactor = AddPostIntercator(firestoreService: fireStoreService, fireStroageService: fireStorageService)
-      
-
-      vc.presenter = presenter
-      presenter.view = vc
-      presenter.interactor = interactor
-      
-      return vc
+        let vc = AddPostViewController()
+        let presenter = AddPostPresenter()
+        let interactor = AddPostIntercator(firestoreService: fireStoreService, fireStroageService: fireStorageService)
+        
+        
+        vc.presenter = presenter
+        presenter.view = vc
+        presenter.interactor = interactor
+        
+        return vc
     }
 }

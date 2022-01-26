@@ -8,10 +8,8 @@
 import UIKit
 
 class AddPostPresenter: NSObject {
-    // giving AddPostViewController to class
-   weak var view: AddPostViewController?
-    
-    // Initializing post interactor
+    // referencing dependencies (for more info look at PostPresenter)
+    weak var view: AddPostViewController?
     var interactor: AddPostIntercator?
     
     // creating var to manipulate textfield within this class
@@ -45,7 +43,7 @@ class AddPostPresenter: NSObject {
     func viewDidLoad() {
         enterTextField?.delegate = self
     }
-    // functions for imagePicker
+    // methods for imagePicker
     // Allows us to retire picker and set image to view when we done choosing
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)

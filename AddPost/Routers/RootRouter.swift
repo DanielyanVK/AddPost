@@ -6,9 +6,11 @@
 //
 
 import UIKit
+//Root Router class.
+// Here we assign our root view controller through method we will call i  scenedelegate and initialize navigation controller.
 
 class RootRouter {
-  
+    
     private let mainContainer: MainContainer
     
     init(mainContainer: MainContainer) {
@@ -16,8 +18,10 @@ class RootRouter {
     }
     
     func root(_ window: UIWindow?, scene: UIWindowScene) {
-        let vc = mainContainer.rootContainer.resolve(PostViewController.self)
+        guard let vc = mainContainer.rootContainer.resolve(PostViewController.self) else { return }
         window?.makeKeyAndVisible()
-        window?.rootViewController = vc
+        // EXTREMELY IMPORTANT!
+        // Initialize navigation controller here. It launches navigation stack with post view controller at the bottom. After that you can Push/Pop other screens with functions defined in other routers
+        window?.rootViewController = UINavigationController(rootViewController: vc)
     }
 }

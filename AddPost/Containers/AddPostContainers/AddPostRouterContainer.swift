@@ -7,16 +7,16 @@
 
 import Swinject
 
-class PostRouterContainer: Containerable {
+class AddPostRouterContainer: Containerable {
     
     let mainContainer: MainContainer
     required init(mainContainer: MainContainer) {
         self.mainContainer = mainContainer
     }
-    // Registering FirestoreServiceImplementation with it's FirestoreService protocol
+    // Registering AddPostRouter
     func register() {
-        rootContainer.register(PostRoutable.self) { (r) -> PostRoutable in
-            return PostRouter(mainContainer: self.mainContainer)
+        rootContainer.register(AddPostRouter.self) { (r) -> AddPostRouter in
+            return AddPostRouter(mainContainer: self.mainContainer)
         }
     }
 }

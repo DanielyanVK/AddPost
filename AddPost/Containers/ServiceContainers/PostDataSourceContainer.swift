@@ -12,7 +12,7 @@ class PostDataSourceContainer: Containerable {
     required init(mainContainer: MainContainer) {
         self.mainContainer = mainContainer
     }
-    // Registering FirestoreServiceImplementation with it's FirestoreService protocol
+    // Registering PostDataSource
     func register() {
         rootContainer.register(PostDataSource.self) { (r) -> PostDataSource in
             return PostDataSource(dataProvider: r.resolve(PostDataProvidable.self)!)

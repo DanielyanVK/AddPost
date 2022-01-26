@@ -16,17 +16,13 @@ class PostContainer: Containerable {
         self.mainContainer = mainContainer
     }
     // when we want to register something we call rootController reference we provided in extension for Containerable
-    // I will write down the connections between elements for future reference:
-    // View (ViewController) knows about Presenter
-    // Presenter knows about View and Interactor
-    // Interactor doesn't know either. Knows about dataprovider and FireStoreSeviceImplementation
     func register() {
-        // Connection between ViewController and Presenter
+        // Registering PostViewController through PostAssembly with parameters we defined in init
         rootContainer.register(PostViewController.self) { (r) -> PostViewController in
             return PostAssembly(firestoreService: r.resolve(FirestoreService.self)!,
                                 postDataProvidable: r.resolve(PostDataProvidable.self)!, mainContainer: self.mainContainer,
-                                postRoutable: r.resolve(PostRoutable.self)!)
+                                addPostRouter: r.resolve(AddPostRouter.self)!)
                 .assembly()!
-        }.inObjectScope(.container)
+        }
     }
 }

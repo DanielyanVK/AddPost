@@ -7,6 +7,7 @@
 
 import Foundation
 
+// protocol to set up table view
 protocol PostDataProvidable {
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
@@ -26,7 +27,7 @@ class PostDataProvider: PostDataProvidable {
     // creating delegate for postdata provider and applying it in postController
     weak var delegate: PostDataProviderDelegate?
     
-    //Applying protocol functions
+    // Applying protocol functions
     func setPosts(posts: [PostModel]) {
         self.models = posts
     // very important to use here to refresh table view

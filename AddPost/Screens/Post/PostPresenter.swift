@@ -7,18 +7,15 @@
 
 import Foundation
 import UIKit
-// Presenter class for our viewController
+// Presenter class for our ViewController
 class PostPresenter: NSObject {
-    // giving PostViewController to class
+    // here we mention dependencies that we registered previously through containers and assembled through assembly
+    // VERY IMPORTANT: do not let two elements point at each other with "var" it will crash your app. Instead youse "weak var" on one of the elements if they point at each other
     weak var view: PostViewController?
-    // Assigning Data Provider
     var dataProvider: PostDataProvidable?
-    // Initializing PostDataSource in our controller
     var dataSource: PostDataSource?
-    // Initializing post interactor
     var interactor: PostInteractor?
-    
-    var router: PostRoutable?
+    var router: AddPostRouter?
     
     // creating var to manipulate tableview within this class
     var postsTableView: UITableView? {
@@ -37,11 +34,10 @@ class PostPresenter: NSObject {
         postsTableView?.delegate = self
         postsTableView?.dataSource = dataSource
     }
+    
     // action for Plus Button
     func plusButtonAction() {
-        
-        router?.pushToAddPost()
-        
+        router?.pushToAddPost(from: view)
     }
     // method to get data from server and keep it updated
     func viewDidLoad() {

@@ -9,7 +9,7 @@ import Foundation
 import FirebaseStorage
 import FirebaseFirestore
 import FirebaseDatabase
-
+// for explanation look at PostInteractor
 class AddPostIntercator {
     
     private let firestoreService: FirestoreService?
