@@ -7,21 +7,22 @@
 
 import UIKit
 
-class AddPostViewController: UIViewController {
+class AddPostViewController: UIViewController, AddPostViewInput {
     
-    @IBOutlet weak var enterTextField: UITextField!
-    @IBOutlet weak var pickedImageView: UIImageView!
+    @IBOutlet private weak var enterTextField: UITextField!
+    @IBOutlet private weak var pickedImageView: UIImageView!
     
-    // Assigning presenter to ViewController
-    var presenter: AddPostPresenter?
+    // Accesing ViewController -> Presenter connection
+    var output: AddPostViewOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        enterTextField.delegate = self
+        output?.viewDidLoad()
     }
     
     @IBAction func pickPhotoButtonAction(_ sender: Any) {
-        presenter?.pickPhotoButtonAction()
+        output?.pickPhotoButtonAction()
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
@@ -29,6 +30,28 @@ class AddPostViewController: UIViewController {
         let textPosted = enterTextField.text
         let pickedImage = pickedImageView.image
         // calling function from presenter
-        presenter?.saveButtonAction(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
+        output?.saveButtonAction(timePosted: timePosted, textPosted: textPosted, pickedImage: pickedImage)
+    }
+    
+    func didPickImage(image: UIImage) {
+        pickedImageView.image = image
+    }
+    
+    func close() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func show(picker: UIImagePickerController) {
+        present(picker, animated: true, completion: nil)
+    }
+    
+    
+}
+
+// Creating extensions to apply delegates we need for ViewController
+extension AddPostViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

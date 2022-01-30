@@ -25,6 +25,7 @@
 		E46FEF3D2793FF8100A1F7D6 /* AddPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */; };
 		E4801D1E279B1663003CB396 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4801D1D279B1663003CB396 /* RootRouter.swift */; };
 		E4801D20279BE808003CB396 /* PostDataSourceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4801D1F279BE808003CB396 /* PostDataSourceContainer.swift */; };
+		E4814B0927A6941D006A7439 /* AddPostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4814B0827A6941D006A7439 /* AddPostProtocols.swift */; };
 		E49AB833278C241700B78BD8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AB832278C241700B78BD8 /* Extensions.swift */; };
 		E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C48ED42784626A00CB63E2 /* AppDelegate.swift */; };
 		E4C48ED72784626A00CB63E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C48ED62784626A00CB63E2 /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 		E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostInteractor.swift; sourceTree = "<group>"; };
 		E4801D1D279B1663003CB396 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		E4801D1F279BE808003CB396 /* PostDataSourceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataSourceContainer.swift; sourceTree = "<group>"; };
+		E4814B0827A6941D006A7439 /* AddPostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostProtocols.swift; sourceTree = "<group>"; };
 		E49AB832278C241700B78BD8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4C48ED12784626A00CB63E2 /* AddPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C48ED42784626A00CB63E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		E4C48EEB278462C500CB63E2 /* AddPostViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E4814B0827A6941D006A7439 /* AddPostProtocols.swift */,
 				E4CCA841279AA53F00BBCD60 /* View */,
 				E46FEF3A2792E06700A1F7D6 /* AddPostPresenter.swift */,
 				E46FEF3C2793FF8100A1F7D6 /* AddPostInteractor.swift */,
@@ -483,6 +486,7 @@
 				E4C48EEE278462EA00CB63E2 /* PostViewController.swift in Sources */,
 				E4C48ED52784626A00CB63E2 /* AppDelegate.swift in Sources */,
 				E443E6F0279E98640087804E /* AddPostRouter.swift in Sources */,
+				E4814B0927A6941D006A7439 /* AddPostProtocols.swift in Sources */,
 				E46FEF2D2792B14700A1F7D6 /* PostDataSource.swift in Sources */,
 				E4D995F1279AE262003308D0 /* ContainersController.swift in Sources */,
 				E46FEF3B2792E06700A1F7D6 /* AddPostPresenter.swift in Sources */,

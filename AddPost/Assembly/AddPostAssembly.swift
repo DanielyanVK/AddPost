@@ -23,8 +23,7 @@ class AddPostAssembly {
         let presenter = AddPostPresenter()
         let interactor = AddPostIntercator(firestoreService: fireStoreService, fireStroageService: fireStorageService)
         
-        
-        vc.presenter = presenter
+        vc.output = presenter
         presenter.view = vc
         presenter.interactor = interactor
         

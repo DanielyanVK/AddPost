@@ -10,7 +10,8 @@ import FirebaseStorage
 import FirebaseFirestore
 import FirebaseDatabase
 // for explanation look at PostInteractor
-class AddPostIntercator {
+
+class AddPostIntercator: AddPostInteractorInput {
     
     private let firestoreService: FirestoreService?
     private let fireStorageService: FireStorageService?
