@@ -18,6 +18,7 @@ protocol AddPostViewOutput {
 // Presenter -> ViewController connection
 protocol AddPostViewInput: AnyObject {
     func didPickImage(image: UIImage)
+    // for now I didn't create AddPost router just for 1 Pop navigation controller function an added it here instead
     func close()
     func show(picker: UIImagePickerController)
 }
